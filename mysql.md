@@ -53,6 +53,16 @@ insert into scores (name,scores) values ("amir",12,1), ("sara",15,2), ("saeed",1
 for ordering autoamatically:
 create table scores(name varchar(250), score float, id int auto_increment, PRIMARY KEY(id));
 
+we use database server for managing requests from program server, when we create a query, db server puts the response in a list and send back it to us, for example list of signed in users, it may be large but mostly we need limited data for example users that signed in last week,
+
+every time we have sorted list, we can find out nearest number to our desired number
+we want the row of our tables by 10-20 indexes, instead of checking all data, we know this numbers is sorted, so we use binary search and it gives us 10-20 more easily
+btree or balance tree is the structure in mysql that save sorted data.
+we can use it and use indexes for easy access to data and improve performance.
+
+every time we use index, an extra table be created for sorting which its reduce writting and deleting.
+in this way we have a full database and sorted table that be created after using database, in quering at first query goes to this sorted table then goes to DB.
+
 
 
 
